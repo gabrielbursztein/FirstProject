@@ -16,11 +16,9 @@ class BooksController < ApplicationController
       @book.save
       redirect_to @book
     end
-    
+
     private
       def book_params
         params.require(:book).permit(:title, :author, :description, :year)
       end
-
-
 end

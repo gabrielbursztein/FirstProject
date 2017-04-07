@@ -1,15 +1,23 @@
 <h1> BOOKS </h1>
 <table>
   <tr>
-  <th>Book</th><th>Author</th><th>Description</th>
+  <th>Id</th><th>Book</th><th>Author</th><th>Year</th><th>Description</th>
   </tr>
   <% @books.each do |book| %>
     <tr>
+      <td><%= book.id %></td>
       <td><%= book.title %></td>
-      <td><%= book.year %></td>
       <td><%= book.author %></td>
+      <td><%= book.year %></td>
       <td><%= book.description %></td>
       <td><%= link_to 'Show', book_path(book) %></td>
+      <% if !current_user.requested?(book) %>
+        <td id='<%= book.id %>'>
+          <%= link_to 'Request', requests_path(:book_id => book.id), method: :post, remote: true %>
+        </td>
+      <% else %>
+        <td><%= current_user.request_status(book) %></td>   
+      <% end %>
     </tr>
   <% end %>
 </table>
