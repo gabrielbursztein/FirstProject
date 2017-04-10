@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 20170406162032) do
     t.datetime "updated_at",             null: false
     t.index ["book_id"], name: "index_requests_on_book_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
+  end 
+  
+  create_table "comments", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "rate"
+    t.string   "description"
+    t.integer  "book_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["book_id"], name: "index_comments_on_book_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,4 +1,28 @@
-<strong><%= @book.title %></strong>
-<p><%= @book.author %></p>
-<p><%= @book.year %> </p>
-<p><%= @book.description %></p>
+<strong><%= book.title %></strong>
+<p><%= book.author %></p>
+<p><%= book.year %> </p>
+<p><%= book.description %></p>
+
+<br>
+<br>
+<h1>Comments</h1>
+<div class='comments'>
+  <table>
+    <% book.comments.each do |comment|%>
+      <tr>
+        <td><%= comment.description %></td>
+        <td><%= comment.rate %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= form_for :comment, url: book_comments_path(book), remote: true do |f| %>
+  <p>Add a comment</p>
+  <p>Rate</p>
+  <%= f.number_field :rate %> <br>
+  <p>Description</p>
+  <%= f.text_area :description %> <br>
+
+  <%= f.submit %>
+<% end %>
