@@ -3,4 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_many :requests
+  has_many :books, through: :requests
+
+  def requested?(book)
+    books.include? book
+  end
+
+  def request_status(book)
+    requests.where(book_id: book.id).pluck(:status).first.titleize
+  end
 end

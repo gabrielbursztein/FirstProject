@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
-    validates :title, :author, :description, precense: true
-    validates :year, precense: true, numericality: true
+    validates :title, :author, :description, presence: true
+    validates :year, presence: true, numericality: true
+    has_many :requests
 end
