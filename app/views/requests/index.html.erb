@@ -1,10 +1,13 @@
-<h1>Index de requests</h1>
-<table class="books_table">
-  <% @requests.each do |request| %>
-  <tr>
-    <td><%= request.book_id %></td>
-    <td><%= request.user_id %></td>
-    <td><%= request.status %></td>
-  </tr>
-  <% end %>
-</table>
+<div class="title"><h1>Books on my shelf</h1></div>
+<div class="my-books">
+  <table class="books-table">
+    <% @requests.each do |request| %>
+    <tr>
+      <td class="date"><%= request.created_at.strftime("%d-%m-%Y") %></td>
+      <td><%= link_to request.book.title, request.book, class: "bold" %></td>
+      <td class="opacity dark-opacity"><%= request.book.author %></td>
+      <td class="<% if request.status == "denied"%>denied bold<% else %>bold light-opacity <% end %>"><%= request.status.titleize %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
