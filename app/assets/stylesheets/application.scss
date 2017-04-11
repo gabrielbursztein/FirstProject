@@ -1,0 +1,104 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$title-font:'Times New Roman';
+$opacity-light: rgba(0,0,0,0.2);
+$opacity-dark: rgba(0,0,0,0.5);
+$a-font:'Arial';
+
+
+.wrapper {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+  border-top: 1px solid $opacity-light;
+}
+
+.title {
+  font-family: $title-font;
+  font-weight: 900;
+  text-align: center;
+  font-size: 40px;
+}
+
+.book_title {
+  font-family: $title-font;
+  font-weight: 900;
+  font-size: 35px;
+}
+
+.book_author {
+  display: flex;
+  align-content: space-between;
+  font-size: 20px;
+  color: $opacity-dark;
+  display: inline-block;
+  padding-top: 5px;
+}
+
+.book_year {
+  font-size: 20px;
+  color: $opacity-dark;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $opacity-light
+}
+
+.image {
+  float: left;
+  width: 250px;
+  height: 400px;
+  background-color: yellow;
+  margin-right: 50px;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+a.request {
+  font-size: 20px;
+  font-family: $a-font;
+  float: right;
+}
+
+.books_table {
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  font-family: Arial;
+
+  tr {
+    line-height: 35px;
+    border-top: 1px solid $opacity-light;
+  }
+}
+
+.book_td_title {
+  font-weight: bold;
+}
+
+.book_td_author {
+  color: $opacity-dark;
+}
+.book_td_year {
+  color: $opacity-dark;
+  padding-right: 20px;
+}
