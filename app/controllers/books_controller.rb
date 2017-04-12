@@ -7,8 +7,7 @@ class BooksController < ApplicationController
     end
 
     def create
-      @book = Book.new(book_params)
-      @book.save
+      @book = Book.create(book_params)
       redirect_to @book
     end
     

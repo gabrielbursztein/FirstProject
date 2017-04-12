@@ -1,9 +1,9 @@
 <div class="wrapper">
   <div class="image"></div>
-  <div class="book_title"><%= book.title %></div>
-  <div class="book_author"><%= book.author %></div>
+  <div class="book-title"><%= book.title %></div>
+  <div class="book-author"><%= book.author %></div>
   <br>
-  <div class="book_author book_year">
+  <div class="book-author book-year">
     <span><%= book.year %> </span>
     <%= link_to 'Request', book_path(book), class:"request" %>
   </div>

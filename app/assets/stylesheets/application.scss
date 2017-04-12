@@ -18,7 +18,7 @@ $title-font:'Times New Roman';
 $opacity-light: rgba(0,0,0,0.2);
 $opacity-dark: rgba(0,0,0,0.5);
 $a-font:'Arial';
-
+$denied-color: rgb(200,0,0);
 
 .wrapper {
   width: 60%;
@@ -32,16 +32,18 @@ $a-font:'Arial';
   font-family: $title-font;
   font-weight: 900;
   text-align: center;
-  font-size: 40px;
+   h1 {
+    -webkit-margin-before: 0px;
+  }
 }
 
-.book_title {
+.book-title {
   font-family: $title-font;
   font-weight: 900;
   font-size: 35px;
 }
 
-.book_author {
+.book-author {
   display: flex;
   align-content: space-between;
   font-size: 20px;
@@ -50,7 +52,7 @@ $a-font:'Arial';
   padding-top: 5px;
 }
 
-.book_year {
+.book-year {
   font-size: 20px;
   color: $opacity-dark;
   padding-top: 10px;
@@ -66,19 +68,14 @@ $a-font:'Arial';
   margin-right: 50px;
 }
 
-a {
-  color: black;
-  font-weight: bold;
-  font-size: 12px;
-}
-
 a.request {
   font-size: 20px;
   font-family: $a-font;
   float: right;
 }
 
-.books_table {
+.books-table {
+  border-spacing: 10px;
   width: 55%;
   margin-left: auto;
   margin-right: auto;
@@ -89,16 +86,56 @@ a.request {
     line-height: 35px;
     border-top: 1px solid $opacity-light;
   }
+  td {
+    word-wrap: break-word;
+    padding: 0 10px;
+    max-width: 300px;
+    min-width: 70px;
+  }
+  a {
+    color: black;
+  }
 }
 
-.book_td_title {
+.home-container {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  a {
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+  }
+}
+
+.bold {
+  text-decoration: none;
   font-weight: bold;
+  font-size: 15px;
 }
 
-.book_td_author {
-  color: $opacity-dark;
+.denied {
+  color: $denied-color;
 }
-.book_td_year {
-  color: $opacity-dark;
-  padding-right: 20px;
+
+.underlined {
+  border-bottom: 2px solid black;
+}
+
+.date {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.lighter {
+  font-weight: lighter;
+}
+
+.dark-opacity {
+  color: rgba(0,0,0,0.5);
+}
+
+.light-opacity {
+  color: rgba(0,0,0,0.3);
 }

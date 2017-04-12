@@ -1,21 +1,23 @@
-<div class='title'> Books on the library </div>
-<table class="books_table">
-  <% @books.each do |book| %>
-    <tr>
-      <td class='book_td_title'>
-       <%= link_to book.title, book_path(book) %>
-      </td>
-     <td><span class='book_td_author'><%= book.author %></span></td>
-      <td><span class='book_td_year'><%= book.year %></span></td>
-      <% if user_signed_in? %>
-        <% if !current_user.requested?(book) %>
-          <td id='<%= book.id %>'>
-           <%= link_to 'Request', requests_path(:book_id => book.id), method: :post, remote: true %>
-          </td>
-        <% else %>
-          <td><%= current_user.request_status(book) %></td>   
+<div class="home-container">
+  <div class="title">
+    <h1> Books on the library </h1>
+  </div>
+  <table class="books-table">
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= link_to book.title, book %></td>
+        <td class="opacity dark-opacity"><%= book.author %></td>
+        <td class="opacity dark-opacity"><%= book.year %></td>
+        <% if user_signed_in? %>
+          <% if !current_user.requested?(book) %>
+            <td id='<%= book.id %>'>
+              <%= link_to 'Request', requests_path(book_id: book.id), method: :post, remote: true, class: "bold underlined" %>
+            </td>
+          <% else %>
+            <td class="<% if current_user.request_status(book) == "denied"%>denied bold<% else %>bold light-opacity <% end %>"><%= current_user.request_status(book) %></td>  
+          <% end %>
         <% end %>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
+      </tr>
+    <% end %>
+  </table>
+</div>
