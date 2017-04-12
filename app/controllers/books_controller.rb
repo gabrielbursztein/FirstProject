@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-    
+    before_action :authenticate_user!
     helper_method :book
 
     def index

@@ -1,1 +1,2 @@
-$('#<%= @book.id %>').html('<span class="bold light_opacity"><%= @request.status.titleize %></span>');
+$('#<%= @book.id %>').html('<%= @request.status.titleize %>');
+$('#<%= @book.id %>').addClass("bold light-opacity");

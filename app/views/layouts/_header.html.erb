@@ -1,6 +1,6 @@
 <ul class="header-container">
   <li class="main"><%= link_to 'The library', books_path,  class: "main-tab " %></li>
   <li><%= link_to 'My Books', requests_path, class: "second-tab active" %></li>
-  <li><%= link_to 'LOG OUT', destroy_user_session_path, method: :post, class: "second-tab" %></li>
+  <li><%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, class: "second-tab" %></li>
 </ul>
   
