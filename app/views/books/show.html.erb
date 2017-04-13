@@ -1,30 +1,41 @@
-<div class="wrapper">
-  <div class="image"></div>
-  <div class="book-title"><%= book.title %></div>
-  <div class="book-author"><%= book.author %></div>
-  <br>
-  <div class="book-author book-year">
-    <span><%= book.year %> </span>
-    <%= link_to 'Request', book_path(book), class:"request" %>
+<div class="comments-wrapper">
+  <div class="book-container">
+    <div class="image"></div>
+    <div>
+      <div class="book-title"><%= book.title %></div>
+      <div class="book-author"><%= book.author %></div>
+      <br>
+      <div class="book-year-request">
+        <h4><%= book.year %></h4> 
+        <% if !current_user.requested?(book) %>
+          <span id='<%= book.id %>'>
+            <%= link_to 'Request', requests_path(book_id: book.id), method: :post, remote: true, class: "request" %>
+          </span>
+        <% else %>
+          <span class='bold big-20  <%= current_user.request_status(book) == "denied" ? "denied" : "dark-opacity" %>'><%= current_user.request_status(book) %></span>  
+        <% end %>
+      </div>
+      <p><%= book.description %></p>
+    </div>
   </div>
-  <p><%= book.description %></p>
-  <h1>Comments</h1>
-  <div class='comments'>
-    <table>
+  <div class='comments-container'>
+    <h3>Comments</h3>
       <% book.comments.each do |comment|%>
-        <tr>
-          <td><%= comment.description %></td>
-          <td><%= comment.rate %></td>
-        </tr>
+        <div class="comment">
+          <h5><%= comment.user.name %></h5><%= comment.rate %> <br>
+          <%= comment.description %>
+        </div>
+        <div class="line-separator"></div>
       <% end %>
-    </table>
+    <div id="add-comment"></div>
+    <div class="new-comment">
+      <%= form_for :comment, url: book_comments_path(book), remote: true do |f| %>
+          <h4>Add a comment - Rate:</h4>
+          <%= f.number_field :rate, max:5, min:1 %> <br>
+          <%= f.text_area :description, placeholder:"Comment", class:'text_area' %> <br>
+          <%= f.submit "Comment", class:"button" %>
+      <% end %>
+    </div>
   </div>
-  <%= form_for :comment, url: book_comments_path(book), remote: true do |f| %>
-    <p>Add a comment</p>
-    <p>Rate</p>
-    <%= f.number_field :rate %> <br>
-    <p>Description</p>
-    <%= f.text_area :description %> <br>
-    <%= f.submit %>
-  <% end %>
 </div>
+<br><br><br>
