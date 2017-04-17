@@ -1,11 +1,14 @@
 class RequestsController < ApplicationController
+  
+  before_action :authenticate_user!
 
   def index
-    user_signed_in? ? @requests = current_user.requests : redirect_to(new_user_session_path)
+    @requests = current_user.requests
   end
 
   def create
     @book = Book.find(params[:book_id])
-    @request = @book.requests.create(user_id: current_user.id)
+    @request = @book.requests.create(user: current_user)
   end
+
 end

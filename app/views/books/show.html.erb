@@ -1,9 +1,9 @@
 <div class="comments-wrapper">
   <div class="book-container">
-    <div class="image"></div>
+    <div class="image"><%= image_tag(book.image_url) %></div>
     <div>
       <div class="book-title"><%= book.title %></div>
-      <div class="book-author"><%= book.author %></div>
+      <div class="book-author"><%= book.author.name %></div>
       <br>
       <div class="book-year-request">
         <h4><%= book.year %></h4> 
