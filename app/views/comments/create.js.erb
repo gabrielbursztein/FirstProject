@@ -1,2 +1,2 @@
 
-$('.comments').append('<%= @comment.rate%><%= @comment.description%>')
+$('#add-comment').append("<div class='comment'><h5><%= @comment.user.name %></h5><%= @comment.rate %> <br><%= @comment.description %></div><div class='line-separator'></div>");

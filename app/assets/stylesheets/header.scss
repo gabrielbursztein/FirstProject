@@ -12,9 +12,11 @@
     flex-wrap: wrap;
     padding-bottom: 10px;
     border-bottom: 1px solid black;
+    align-items: center;
 
     li {
       display: inline;
+
       &.main {
         flex: 1;
       }
@@ -28,12 +30,14 @@
           font-size: 25px;
           font-weight: bold;
         } 
+
         &.second-tab {
           font-size: 17px;
         }
+        
         &.active {
           border-bottom: 3px solid black;
-          padding-bottom: 16px;
+          padding-bottom: 11px;
         }
       }
     }

@@ -32,40 +32,16 @@ $denied-color: rgb(200,0,0);
   font-family: $title-font;
   font-weight: 900;
   text-align: center;
+   
    h1 {
     -webkit-margin-before: 0px;
-  }
+    }
 }
 
 .book-title {
   font-family: $title-font;
   font-weight: 900;
   font-size: 35px;
-}
-
-.book-author {
-  display: flex;
-  align-content: space-between;
-  font-size: 20px;
-  color: $opacity-dark;
-  display: inline-block;
-  padding-top: 5px;
-}
-
-.book-year {
-  font-size: 20px;
-  color: $opacity-dark;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid $opacity-light
-}
-
-.image {
-  float: left;
-  width: 250px;
-  height: 400px;
-  background-color: yellow;
-  margin-right: 50px;
 }
 
 a.request {
@@ -75,7 +51,6 @@ a.request {
 }
 
 .books-table {
-  border-spacing: 10px;
   width: 55%;
   margin-left: auto;
   margin-right: auto;
@@ -86,12 +61,14 @@ a.request {
     line-height: 35px;
     border-top: 1px solid $opacity-light;
   }
+
   td {
     word-wrap: break-word;
-    padding: 0 10px;
+    padding: 0px;
     max-width: 300px;
     min-width: 70px;
   }
+
   a {
     color: black;
   }
@@ -101,6 +78,7 @@ a.request {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
   a {
     color: black;
     font-weight: bold;

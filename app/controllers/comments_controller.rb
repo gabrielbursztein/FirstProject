@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   helper_method :book
 
   def create
-    @comment = book.comments.create(comment_params)
+    @comment = book.comments.create(comment_params.merge({user_id: current_user.id}))
   end
 
   def book

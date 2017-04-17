@@ -1,0 +1,125 @@
+$opacity-light: rgba(0,0,0,0.2);
+$opacity-dark: rgba(0,0,0,0.5);
+$denied-color: rgb(200,0,0);
+$black: black;
+$white: white;
+
+.comments-wrapper {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+  border-top: 1px solid $opacity-light;
+
+  .comments-container {
+    border-top: 1px solid $opacity-light;
+
+    .new-comment {
+      width: inherit;
+      margin-top: 30px;
+
+      h4 {
+        display: inline
+      }
+
+      .button {
+        border-radius: 0px;
+        font-family: Arial;
+        color: $white;
+        font-size: 15px;
+        background: $black;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        float: right;
+        border: 0px;
+        margin-top: 10px;
+      }
+
+      .text_area {
+        width: 100%;
+        height: 90px;
+        font-size: 15px;
+        margin-top: 15px;
+        resize: none;
+        border: 1px solid $opacity-light;
+      }
+    }
+
+    .comment {
+      display: inline-block;
+
+      h5 {
+        display: inherit;
+      }
+    }
+
+    .line-separator {
+      height:1px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $opacity-light;
+      width: 200px;
+    }
+  }
+
+  .book-container {
+    display: -webkit-box;
+    width: inherit;
+
+    .image {
+      float: left;
+      width: 250px;
+      height: 400px;
+      background-color: yellow;
+      margin-right: 30px;
+    }
+  
+
+    .book-author {
+      display: flex;
+      align-content: space-between;
+      font-size: 20px;
+      color: $opacity-dark;
+      display: inline-block;
+      padding-top: 5px;
+    }
+
+    .book-year-request {
+      align-items: center;
+      line-height: 8px;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      font-size: 20px;
+      color: $opacity-dark;
+      border-bottom: 1px solid $opacity-light;
+
+      h4 {
+        font-weight: lighter;
+      }
+    }
+  }
+
+  .bold {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .big-20 {
+    font-size: 20px;
+  }
+
+  .denied {
+    color: $denied-color;
+  }
+  
+  a {
+    color: $black;
+    font-weight: bold;
+  }
+
+  h4 {
+    flex: 1;
+  }
+}

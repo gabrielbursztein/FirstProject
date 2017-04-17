@@ -1,9 +1,21 @@
 class BooksController < ApplicationController
-    before_action :authenticate_user!
+
     helper_method :book
+    before_action :authenticate_user!
 
     def index
       @books = Book.all
+      respond_to do |format| 
+        format.html
+        format.json {render json: {data: @books}, status: :ok}
+      end  
+    end
+
+    def show
+      respond_to do |format| 
+        format.html
+        format.json {render json: {data:book}, status: :ok}
+      end
     end
 
     def create
