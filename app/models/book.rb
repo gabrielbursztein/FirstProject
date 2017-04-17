@@ -3,4 +3,5 @@ class Book < ApplicationRecord
     validates :year, presence: true, numericality: true
     has_many :requests
     has_many :comments
+    mount_uploader :image, ImageUploader
 end
