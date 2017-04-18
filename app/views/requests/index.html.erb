@@ -5,7 +5,7 @@
     <tr>
       <td class="date"><%= request.created_at.strftime("%d-%m-%Y") %></td>
       <td><%= link_to request.book.title, request.book, class: "bold" %></td>
-      <td class="opacity dark-opacity"><%= request.book.author %></td>
+      <td class="opacity dark-opacity"><%= request.book.author.name %></td>
       <td class="<% if request.status == "denied"%>denied bold<% else %>bold light-opacity <% end %>"><%= request.status.titleize %></td>
     </tr>
     <% end %>

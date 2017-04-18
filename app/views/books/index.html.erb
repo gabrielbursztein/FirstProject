@@ -6,7 +6,7 @@
     <% @books.each do |book| %>
       <tr>
         <td><%= link_to book.title, book %></td>
-        <td class="opacity dark-opacity"><%= book.author %></td>
+        <td class="opacity dark-opacity"><%= book.author.name %></td>
         <td class="opacity dark-opacity"><%= book.year %></td>
         <% if user_signed_in? %>
           <% if !current_user.requested?(book) %>

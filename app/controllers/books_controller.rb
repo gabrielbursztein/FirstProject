@@ -18,6 +18,10 @@ class BooksController < ApplicationController
       end
     end
 
+    def new
+      @authors = Author.all
+    end
+
     def create
       @book = Book.create(book_params)
       redirect_to @book
@@ -29,6 +33,6 @@ class BooksController < ApplicationController
 
     private
       def book_params
-        params.require(:book).permit(:title, :author, :description, :year)
+        params.require(:book).permit(:title, :author_id, :description, :year, :image)
       end
 end
