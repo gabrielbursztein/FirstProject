@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :requests
   has_many :books, through: :requests
+  ratyrate_rater
 
   def requested?(book)
     books.include? book

@@ -12,6 +12,8 @@
  *
  *= require_self
  *= require header
+ *= require comments
+ *= require signIn
  */
 
 $title-font:'Times New Roman';
@@ -19,6 +21,25 @@ $opacity-light: rgba(0,0,0,0.2);
 $opacity-dark: rgba(0,0,0,0.5);
 $a-font:'Arial';
 $denied-color: rgb(200,0,0);
+$red: rgb(255,0,0);
+
+.side-book-information {
+  width: inherit;
+}
+
+.errors {
+  padding: 10px;
+
+  li {
+    color: $red;
+    font-size: 20px;
+  }
+}
+
+div.field_with_errors {
+  display: inline;
+  box-shadow: 2px $red;
+}
 
 .wrapper {
   width: 60%;
