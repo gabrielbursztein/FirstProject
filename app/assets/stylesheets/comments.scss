@@ -63,13 +63,16 @@ $white: white;
   }
 
   .book-container {
-    display: -webkit-box;
-    width: inherit;
+    display: inline-flex;
+    width: 100%;
+
+    .side-book-information {
+      width: 55%;
+    }
 
     .image {
       float: left;
-      width: 250px;
-      height: 400px;
+      width: 45%;
       margin-right: 30px;
     }
   
@@ -86,7 +89,6 @@ $white: white;
     .book-year-request {
       align-items: center;
       line-height: 8px;
-      width: 90%;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;

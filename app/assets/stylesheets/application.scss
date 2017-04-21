@@ -12,6 +12,8 @@
  *
  *= require_self
  *= require header
+ *= require comments
+ *= require signIn
  */
 
 $title-font:'Times New Roman';
@@ -58,13 +60,13 @@ a.request {
   font-family: Arial;
 
   tr {
-    line-height: 35px;
+    line-height: 20px;
     border-top: 1px solid $opacity-light;
   }
 
   td {
     word-wrap: break-word;
-    padding: 0px;
+    padding: 10px;
     max-width: 300px;
     min-width: 70px;
   }
