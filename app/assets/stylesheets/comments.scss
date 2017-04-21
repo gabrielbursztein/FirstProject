@@ -46,12 +46,22 @@ $white: white;
     }
 
     .comment {
-      display: inline-block;
+      display: block;
+      padding-top: 10px;
 
-      h5 {
-        display: inherit;
+      h4 {
+        display: inline;
       }
+
     }
+
+    .star {
+      display: inline-flex;
+    }
+
+    img.raty-cancel {
+      display: none;
+    } 
 
     .line-separator {
       height:1px;

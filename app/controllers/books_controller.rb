@@ -20,11 +20,19 @@ class BooksController < ApplicationController
 
     def new
       @authors = Author.all
+      @book = Book.new
     end
 
     def create
-      @book = Book.create(book_params)
-      redirect_to @book
+      @book = Book.new(book_params)
+      if @book.save
+        redirect_to @book
+      else
+        flash.now[:error] = @book.errors
+        @authors = Author.all
+        render :new
+      end
+
     end
     
     def book
@@ -32,7 +40,7 @@ class BooksController < ApplicationController
     end
 
     private
-      def book_params
-        params.require(:book).permit(:title, :author_id, :description, :year, :image)
-      end
+    def book_params
+      params.require(:book).permit(:title, :author_id, :description, :year, :image)
+    end
 end

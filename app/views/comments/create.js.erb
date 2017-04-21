@@ -1,2 +1,2 @@
-
-$('#add-comment').append("<div class='comment'><h5><%= @comment.user.name %></h5><%= @comment.rate %> <br><%= @comment.description %></div><div class='line-separator'></div>");
+$('#add-comment').append('<div class="comment"><h4><%= @comment.user.name %></h4><%= rating_for_user book, @comment.user, "general", star_on: "/assets/fill_star.png", star_off: "/assets/empty_star.png", disable_after_rate: true %>  <br><%= @comment.description %></div><div class="line-separator"></div>');
+$('#comment_description').val("");

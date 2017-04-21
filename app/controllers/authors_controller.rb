@@ -12,7 +12,7 @@ class AuthorsController < ApplicationController
   end
 
   private
-    def book_params
-      params.require(:author).permit(:name)
-    end
+  def book_params
+    params.require(:author).permit(:name)
+  end
 end

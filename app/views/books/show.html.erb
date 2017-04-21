@@ -22,7 +22,9 @@
     <h3>Comments</h3>
       <% book.comments.each do |comment|%>
         <div class="comment">
-          <h5><%= comment.user.name %></h5><%= comment.rate %> <br>
+          <h4><%= comment.user.name %> - </h5>
+          <%= rating_for_user book, comment.user, 'general', star_on: '/assets/fill_star.png', star_off: '/assets/empty_star.png', disable_after_rate: true %>
+          <br><br>
           <%= comment.description %>
         </div>
         <div class="line-separator"></div>
@@ -31,7 +33,7 @@
     <div class="new-comment">
       <%= form_for :comment, url: book_comments_path(book), remote: true do |f| %>
           <h4>Add a comment - Rate:</h4>
-          <%= f.number_field :rate, max:5, min:1 %> <br>
+          <%= rating_for book, "general", star_on: '/assets/fill_star.png', star_off: '/assets/empty_star.png', cancel: true %>
           <%= f.text_area :description, placeholder:"Comment", class:'text_area' %> <br>
           <%= f.submit "Comment", class:"button" %>
       <% end %>

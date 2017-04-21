@@ -1,0 +1,11 @@
+<div class="errors">
+  <ul>
+    <% flash[:error].each do |key, value| %>
+      <% if value != [] && !value.nil? %>
+        <li>
+          <%= key.to_s.capitalize + " " + value.to_s %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

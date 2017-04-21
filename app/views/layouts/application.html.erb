@@ -10,6 +10,9 @@
 
   <body>
     <%= render partial: 'layouts/header.html.erb' %>
+    <% if flash.any? && flash[:error].present?  %>
+      <%= render partial: 'layouts/errors.html.erb' %>
+    <% end -%>
     <%= yield %>
   </body>
 </html>
