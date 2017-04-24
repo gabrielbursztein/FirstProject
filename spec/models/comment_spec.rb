@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Comment do
-  it "is valid with valid attributes" do
+  it 'is valid with valid attributes' do
     expect(FactoryGirl.create(:comment)).to be_valid
   end
 

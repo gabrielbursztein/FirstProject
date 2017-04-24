@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe BooksController do
-  before(:each) do 
+  before(:each) do
     user = FactoryGirl.create(:user)
     sign_in user
   end
@@ -22,12 +22,12 @@ RSpec.describe BooksController do
       end
     end
 
-    context 'there are no books' do 
+    context 'there are no books' do
       it 'populates an array of books' do
         get :index
         expect(assigns(:books)).to eq([])
       end
-    end     
+    end
   end
 
   describe 'GET new' do
@@ -51,13 +51,14 @@ RSpec.describe BooksController do
           description: 'Descripcion',
           author_id: author.id,
           year: 2000,
-          image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'files', 'oneHundred.jpg'))
+          image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec',
+                                                'files', 'oneHundred.jpg'))
         }
       end
 
       it 'creates a new book' do
         expect {
-          post :create, params: { book: book_params}
+          post :create, params: { book: book_params }
         }.to change(Book, :count).by(1)
       end
 
@@ -77,9 +78,9 @@ RSpec.describe BooksController do
           image: nil
         }
       end
-       it 'does not create a new book' do
+      it 'does not create a new book' do
         expect {
-          post :create, params: { book: book_params}
+          post :create, params: { book: book_params }
         }.to_not change(Book, :count)
       end
 
@@ -89,5 +90,4 @@ RSpec.describe BooksController do
       end
     end
   end
-
 end

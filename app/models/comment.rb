@@ -1,3 +1,4 @@
+# Comment Controller
 class Comment < ApplicationRecord
   validates :description, presence: true
   belongs_to :book
