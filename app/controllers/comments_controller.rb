@@ -1,9 +1,11 @@
+# Comments Controller
 class CommentsController < ApplicationController
- 
   helper_method :book
 
   def create
-    @comment = book.comments.create(comment_params.merge({user_id: current_user.id}))
+    @comment = book.comments.create(comment_params.merge(
+                                      user_id: current_user.id
+    ))
   end
 
   def book
@@ -13,5 +15,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:description)
   end
-
 end

@@ -1,3 +1,4 @@
+# Active Admin Migration
 class CreateActiveAdminComments < ActiveRecord::Migration::Current
   def self.up
     create_table :active_admin_comments do |t|
@@ -9,7 +10,7 @@ class CreateActiveAdminComments < ActiveRecord::Migration::Current
       t.timestamps
     end
     add_index :active_admin_comments, [:namespace]
-    add_index :active_admin_comments, [:resource_type, :resource_id]
+    add_index :active_admin_comments, %i[resource_type resource_id]
   end
 
   def self.down

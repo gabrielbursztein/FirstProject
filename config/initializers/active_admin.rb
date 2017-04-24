@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Project Library"
+  config.site_title = 'Project Library'
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -116,7 +116,8 @@ ActiveAdmin.setup do |config|
 
   # == Admin Comments
   #
-  # This allows your users to comment on any resource registered with Active Admin.
+  # This allows your users to comment on any resource registered
+  # with Active Admin.
   #
   # You can completely disable comments:
   # config.comments = false
@@ -188,7 +189,8 @@ ActiveAdmin.setup do |config|
   # To load a stylesheet:
   #   config.register_stylesheet 'my_stylesheet.css'
   #
-  # You can provide an options hash for more control, which is passed along to stylesheet_link_tag():
+  # You can provide an options hash for more control,
+  # which is passed along to stylesheet_link_tag():
   #   config.register_stylesheet 'my_print_stylesheet.css', media: :print
   #
   # To load a javascript file:
@@ -204,22 +206,29 @@ ActiveAdmin.setup do |config|
 
   # == Menu System
   #
-  # You can add a navigation menu to be used in your application, or configure a provided menu
+  # You can add a navigation menu to be used in your application,
+  # or configure a provided menu
   #
-  # To change the default utility navigation to show a link to your website & a logout btn
+  # To change the default utility navigation to show a
+  # link to your website & a logout btn
   #
   #   config.namespace :admin do |admin|
   #     admin.build_menu :utility_navigation do |menu|
-  #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
+  #       menu.add label: "My Great Website",
+  #                url: "http://www.mygreatwebsite.com",
+  #                html_options: { target: :blank }
   #       admin.add_logout_button_to_menu menu
   #     end
   #   end
   #
-  # If you wanted to add a static menu item to the default menu provided:
+  # If you wanted to add a static menu item to the default menu
+  # provided:
   #
   #   config.namespace :admin do |admin|
   #     admin.build_menu :default do |menu|
-  #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
+  #       menu.add label: "My Great Website",
+  # url: "http://www.mygreatwebsite.com",
+  # html_options: { target: :blank }
   #     end
   #   end
 

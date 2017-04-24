@@ -1,3 +1,4 @@
+# Book Model
 class Book < ApplicationRecord
   has_many :requests
   has_many :comments
@@ -9,10 +10,9 @@ class Book < ApplicationRecord
   validate :year_margins
 
   def year_margins
-    if year
-      unless year.between? 1700, Time.current.year
-        errors.add(:year,  'year must be between 1700 and ' + Time.current.year.to_s)
-      end
-    end
+    return false if year.nil?
+    return false unless year.between? 1700, Time.current.year
+    errors.add(:year, 'year must be between 1700 and ' +
+      Time.current.year.to_s)
   end
 end

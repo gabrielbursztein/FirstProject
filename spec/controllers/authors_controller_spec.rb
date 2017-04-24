@@ -1,11 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe AuthorsController do 
+RSpec.describe AuthorsController do
   describe 'POST create' do
-    let(:author_params) do
-      {
-        name: 'Gabriel Garcia Marquez'
-      }
+    let(:author_params) do { name: 'Gabriel Garcia Marquez' }
     end
     it 'creates a new author' do
       expect {

@@ -1,5 +1,4 @@
 ActiveAdmin.register Book do
-
   permit_params :title, :author_id, :description, :image, :year
   index do
     selectable_column
@@ -12,5 +11,4 @@ ActiveAdmin.register Book do
     column :updated_at
     actions
   end
-
 end
